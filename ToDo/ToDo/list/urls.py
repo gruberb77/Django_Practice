@@ -1,10 +1,12 @@
-from django.conf.urls import urls
+from django.conf.urls import url
 from . import views
 
 app_name = 'list'
 urlpatterns = [
 
-    url(r'^$',views.index, name='index'),
+    url(r'^$', views.home, name='home'),
+    url(r'^contact$', views.contact, name='contact'),
+    url(r'^about', views.about, name='about'),
     url(r'^addform/$',views.addform, name='addform'),
     url(r'^add/$',views.add, name='add'),
     url(r'^viewlist/$',views.viewlist, name='viewlist'),
