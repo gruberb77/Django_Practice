@@ -4,7 +4,6 @@ from . import views
 app_name = 'list'
 urlpatterns = [
 
-    url(r'^home/$', views.home, name='home'),
     url(r'^contact$', views.contact, name='contact'),
     url(r'^about', views.about, name='about'),
     url(r'^addform/$',views.addform, name='addform'),
@@ -12,5 +11,5 @@ urlpatterns = [
     url(r'^viewlist/$',views.viewlist, name='viewlist'),
     url(r'^change_tasks/$',views.change_tasks, name='change_tasks'),
     url(r'^create_account/$',views.create_account, name='create_account'),
-    url(r'^$', views.home, name='home'),    
+    url(r'^$', views.index, name='index'),
 ]

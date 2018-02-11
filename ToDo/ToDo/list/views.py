@@ -16,15 +16,15 @@ from .models import ListItem
 
 #home page where user can view, add, or edit tasks
 @login_required
-def home(request):
+def index(request):
     """Renders the home page."""
+    latest_list = ListItem.objects.filter(user=request.user).order_by('goal_date')
     assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'list/index.html',
+    return render(request, 'app/index.html',
         {
             'title':'Home Page',
             'year':datetime.now().year,
+            'latest_list':latest_list,
         }
     )
 
