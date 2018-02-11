@@ -21,7 +21,7 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/index.html',
+        'list/index.html',
         {
             'title':'Home Page',
             'year':datetime.now().year,
