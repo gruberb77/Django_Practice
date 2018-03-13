@@ -184,8 +184,15 @@
                 <h2>Modal Header</h2>
               </div>
               <div class="modal-body">
-                <p>Some text in the Modal Body</p>
-                <p>Some other text...</p>
+                <form class="add" method="post">
+                  {% csrf_token %}
+                  <h2>Add Task</h2>
+                  <input type="text" placeholder="Task Name" name="Name" value="{{ Name }}" autofocus/></br></br>
+                  <input type="datetime-local" name="goal_date" value="{{ goal_date }}"/></br></br>
+                  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">
+                    <span class="state">Add</span>
+                  </button>
+                </form>
                 </div>
                 <div>
                   <h3>Modal Footer</h3>
