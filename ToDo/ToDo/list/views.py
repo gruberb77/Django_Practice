@@ -87,9 +87,9 @@ def addform(request):
 @login_required
 def add(request):
     print("here")
-    newLI = ListItem(name=request.POST['Name'], goal_date=request.POST['goal_date'],complete=False, User=request.user)
+    newLI = ListItem(name=request.POST['taskName'], goal_date=request.POST['goal_date'],complete=False, user=request.user)
     newLI.save()
-    return HttpResponseRedirect(reverse('app:index'))
+    return HttpResponseRedirect(reverse('list:index'))
 
 #create a user account
 def create_account(request):
